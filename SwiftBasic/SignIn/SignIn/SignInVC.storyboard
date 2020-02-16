@@ -40,6 +40,9 @@
                                 <state key="normal" title="Sign in">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInAPICall:" destination="Z9J-vb-GPA" eventType="touchUpInside" id="aiY-rQ-SFb"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omF-oP-2ef">
                                 <rect key="frame" x="82" y="514" width="250" height="30"/>
@@ -104,6 +107,8 @@
                     <navigationItem key="navigationItem" id="CYi-Ht-QGd"/>
                     <connections>
                         <outlet property="buttonSignIn" destination="c7F-lt-naz" id="FSh-HY-1sl"/>
+                        <outlet property="passwordTextField" destination="FIC-GJ-NQP" id="1vz-Ec-qtU"/>
+                        <outlet property="userNameTextField" destination="FOZ-aS-iuY" id="b3Z-4p-D8D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xt-A2-xoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

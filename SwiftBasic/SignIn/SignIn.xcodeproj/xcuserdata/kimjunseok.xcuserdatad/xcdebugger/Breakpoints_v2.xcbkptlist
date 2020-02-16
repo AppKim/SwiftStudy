@@ -20,5 +20,53 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "096FF384-912C-4F9A-9F15-83FDB911A451"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SignIn/SignInViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "signInAPICall(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "096FF384-912C-4F9A-9F15-83FDB911A451 - ad698bc9452be6b8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SignIn.SignInViewController.signInAPICall(Any) -&gt; ()"
+                  moduleName = "SignIn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimjunseok/Desktop/Swift/SwiftBasic/SignIn/SignIn/SignInViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "976">
+               </Location>
+               <Location
+                  uuid = "096FF384-912C-4F9A-9F15-83FDB911A451 - ad698bc9452be6b8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SignIn.SignInViewController.signInAPICall(Any) -&gt; ()"
+                  moduleName = "SignIn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimjunseok/Desktop/Swift/SwiftBasic/SignIn/SignIn/SignInViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "1149">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

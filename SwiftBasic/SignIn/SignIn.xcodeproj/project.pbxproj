@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0F3B4123F7AB90002129E0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F3B4023F7AB90002129E0 /* Common.swift */; };
+		0F0F3B4323F7B122002129E0 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F3B4223F7B122002129E0 /* LoginUser.swift */; };
 		0F6E0E2823F283A4000FBD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E0E2723F283A4000FBD00 /* AppDelegate.swift */; };
 		0F6E0E2A23F283A4000FBD00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E0E2923F283A4000FBD00 /* SceneDelegate.swift */; };
 		0F6E0E2C23F283A4000FBD00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E0E2B23F283A4000FBD00 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0F3B4023F7AB90002129E0 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		0F0F3B4223F7B122002129E0 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
 		0F6E0E2423F283A4000FBD00 /* SignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6E0E2723F283A4000FBD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F6E0E2923F283A4000FBD00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,9 +73,11 @@
 				0F6E0E2B23F283A4000FBD00 /* ViewController.swift */,
 				0F6E0E2D23F283A4000FBD00 /* Main.storyboard */,
 				0F6E0E3B23F28639000FBD00 /* SignInViewController.swift */,
+				0F0F3B4223F7B122002129E0 /* LoginUser.swift */,
 				0F6E0E3F23F299F5000FBD00 /* SignUpViewController.swift */,
 				0F6E0E4123F29A10000FBD00 /* SignUpVC.storyboard */,
 				0F6E0E3D23F28658000FBD00 /* SignInVC.storyboard */,
+				0F0F3B4023F7AB90002129E0 /* Common.swift */,
 				0F6E0E3023F283A6000FBD00 /* Assets.xcassets */,
 				0F6E0E3223F283A6000FBD00 /* LaunchScreen.storyboard */,
 				0F6E0E3523F283A6000FBD00 /* Info.plist */,
@@ -152,10 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F0F3B4323F7B122002129E0 /* LoginUser.swift in Sources */,
 				0F6E0E3C23F28639000FBD00 /* SignInViewController.swift in Sources */,
 				0F6E0E2C23F283A4000FBD00 /* ViewController.swift in Sources */,
 				0F6E0E2823F283A4000FBD00 /* AppDelegate.swift in Sources */,
 				0F6E0E2A23F283A4000FBD00 /* SceneDelegate.swift in Sources */,
+				0F0F3B4123F7AB90002129E0 /* Common.swift in Sources */,
 				0F6E0E4023F299F5000FBD00 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
