@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F0F3B4123F7AB90002129E0 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F3B4023F7AB90002129E0 /* Common.swift */; };
 		0F0F3B4323F7B122002129E0 /* LoginUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F3B4223F7B122002129E0 /* LoginUser.swift */; };
+		0F2F66E123FAEF78003A806C /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2F66E023FAEF78003A806C /* Singleton.swift */; };
 		0F6E0E2823F283A4000FBD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E0E2723F283A4000FBD00 /* AppDelegate.swift */; };
 		0F6E0E2A23F283A4000FBD00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E0E2923F283A4000FBD00 /* SceneDelegate.swift */; };
 		0F6E0E2C23F283A4000FBD00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6E0E2B23F283A4000FBD00 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		0F0F3B4023F7AB90002129E0 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		0F0F3B4223F7B122002129E0 /* LoginUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUser.swift; sourceTree = "<group>"; };
+		0F2F66E023FAEF78003A806C /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		0F6E0E2423F283A4000FBD00 /* SignIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6E0E2723F283A4000FBD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F6E0E2923F283A4000FBD00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				0F6E0E2D23F283A4000FBD00 /* Main.storyboard */,
 				0F6E0E3B23F28639000FBD00 /* SignInViewController.swift */,
 				0F0F3B4223F7B122002129E0 /* LoginUser.swift */,
+				0F2F66E023FAEF78003A806C /* Singleton.swift */,
 				0F6E0E3F23F299F5000FBD00 /* SignUpViewController.swift */,
 				0F6E0E4123F29A10000FBD00 /* SignUpVC.storyboard */,
 				0F6E0E3D23F28658000FBD00 /* SignInVC.storyboard */,
@@ -163,6 +166,7 @@
 				0F6E0E2C23F283A4000FBD00 /* ViewController.swift in Sources */,
 				0F6E0E2823F283A4000FBD00 /* AppDelegate.swift in Sources */,
 				0F6E0E2A23F283A4000FBD00 /* SceneDelegate.swift in Sources */,
+				0F2F66E123FAEF78003A806C /* Singleton.swift in Sources */,
 				0F0F3B4123F7AB90002129E0 /* Common.swift in Sources */,
 				0F6E0E4023F299F5000FBD00 /* SignUpViewController.swift in Sources */,
 			);

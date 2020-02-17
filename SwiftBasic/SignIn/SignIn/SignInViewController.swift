@@ -70,9 +70,12 @@ class SignInViewController: UIViewController {
             do{
                 let user = try decoder.decode([LoginUser].self, from: data)
                 print("user => \(user)")
-                //user.name
-                //user.password
-                //user.email
+                
+                if let hasUserInfo = user.first{
+                    User.shared.info = hasUserInfo
+                }
+                
+                
             }catch{
                 // Error
                 print("error ==> \(error)")
