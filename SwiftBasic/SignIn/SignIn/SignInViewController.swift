@@ -72,9 +72,30 @@ class SignInViewController: UIViewController {
                 print("user => \(user)")
                 
                 if let hasUserInfo = user.first{
-                    User.shared.info = hasUserInfo
-                }
+                    
+                    Singleton.User.shared.info = hasUserInfo
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name.init("UserInfoLoad"), object: nil)
                 
+                }else{
+                    
+                    // alert
+                    // UIに関する動作はメインThreadに入力しないとエラー発生
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController.init(title: "ユーザー情報がございません。", message: nil, preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "確認", style: .default, handler: { (element) in
+                            // 　ボタンが活性化された際に動作する処理を入力
+                        }))
+                        alert.addAction(UIAlertAction(title: "取消", style: .default, handler: { (element) in
+                            // 　ボタンが活性化された際に動作する処理を入力
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
+                }
                 
             }catch{
                 // Error
@@ -83,10 +104,6 @@ class SignInViewController: UIViewController {
         // データ呼び出し
         // network接続設定として、info.plistにてApp Transport Security SettingsとAllow Arbitrary LoadsをYESに設定、ドメイン制限も可能
         }.resume()
-        
-        
-        
-        
         
     }
     

@@ -10,10 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var userInfoLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(infoReLoad), name: NSNotification.Name.init("UserInfoLoad"), object: nil)
+
     }
+    
+    @objc func infoReLoad() {
+        DispatchQueue.main.async {
+            self.userInfoLabel.text = Singleton.User.shared.info.email
+        }
+    }
+    
 
     @IBAction func moveToSignIn(_ sender: Any) {
         // ログイン画面と連結
