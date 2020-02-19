@@ -40,6 +40,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpApiCall:" destination="gLR-wl-4hU" eventType="touchUpInside" id="lu8-Qm-bgw"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9VJ-wf-gKn">
                                 <rect key="frame" x="30" y="373" width="354" height="24"/>
@@ -80,11 +83,14 @@
                     </view>
                     <connections>
                         <outlet property="buttonSignUp" destination="CMp-Rh-9vF" id="phI-aX-E5s"/>
+                        <outlet property="emailField" destination="9VJ-wf-gKn" id="ch6-YS-Nry"/>
+                        <outlet property="nameField" destination="sNF-OL-JgG" id="PEh-cy-RCy"/>
+                        <outlet property="passwordField" destination="4TC-cD-glB" id="CQR-Za-y2v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVo-uC-wrw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="113"/>
+            <point key="canvasLocation" x="-12" y="100"/>
         </scene>
     </scenes>
 </document>
