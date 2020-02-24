@@ -53,10 +53,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>アヴェンジャーズの特定するためにカメラを許可します。</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>アヴェンジャーズの特定するためにライブライを許可します。</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Vision
 
 class ViewController: UIViewController {
 
@@ -23,14 +24,47 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showCamera(_ sender: Any) {
-        
+        picker.sourceType = .camera
+        self.present(picker, animated: true, completion: nil)
     }
     
     @IBAction func openPhotoLibray(_ sender: Any) {
+        picker.sourceType = .photoLibrary
+        self.present(picker, animated: true, completion: nil)
     }
+    
     // イメージマシンへ転送
     func processImage(_ image: UIImage) {
         // ML Model
+        if let model = try? VNCoreMLModel(for: MarvelClassifier().model){
+            let request = VNCoreMLRequest(model: model) { (request, error) in
+                if let results = request.results as? [VNClassificationObservation]{
+                    
+                    let firstValue = results.sorted { (lh, rh) -> Bool in
+                        // 내림차순
+                        return lh.confidence > rh.confidence
+                    // ソート後、最初の値だけ取得
+                    }.first
+                    
+                    if let bestMatch = firstValue{
+                        self.nameLabel.text = bestMatch.identifier
+                        self.percentLabel.text = "\(bestMatch.confidence * 100) %"
+                    }
+                }
+                
+            }
+            
+            // image data
+            if let imageData = image.jpegData(compressionQuality: 0.7){
+                let handler = VNImageRequestHandler(data: imageData, options: [:])
+                try? handler.perform([request])
+            }
+        
+        
+        }else {
+            
+        }
+        
         
         // Find
         
