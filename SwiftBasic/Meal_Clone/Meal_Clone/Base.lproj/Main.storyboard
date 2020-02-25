@@ -107,6 +107,9 @@
                                 <rect key="frame" x="10" y="98" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didChanged:" destination="rIC-BV-PTN" eventType="editingChanged" id="ceZ-LM-YG3"/>
+                                </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="bb3-HW-aH5">
                                 <rect key="frame" x="10" y="142" width="394" height="224"/>
@@ -142,11 +145,18 @@
                                 <action selector="closeVC:" destination="rIC-BV-PTN" id="ynI-W6-PtR"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="0gF-RX-cep">
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveMeal:" destination="rIC-BV-PTN" id="HXE-2g-cfb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mealImageView" destination="bb3-HW-aH5" id="KCg-vZ-8Wo"/>
                         <outlet property="nameField" destination="Cym-YZ-fhl" id="sIm-10-pgi"/>
                         <outlet property="ratingView" destination="irX-30-cOi" id="ZZL-mQ-lut"/>
+                        <outlet property="saveButton" destination="0gF-RX-cep" id="evd-iF-MXI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ed-hi-9vY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

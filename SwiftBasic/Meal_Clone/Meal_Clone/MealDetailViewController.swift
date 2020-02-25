@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MealDetailViewController: UIViewController {
+class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mealImageView: UIImageView!
     @IBOutlet weak var ratingView: RatingView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var mealModel = MealModel()
     
@@ -22,6 +23,60 @@ class MealDetailViewController: UIViewController {
         nameField.text = mealModel.name
         ratingView.rating = mealModel.rating
         mealImageView.image = mealModel.photo ?? UIImage(named: "defaultPhoto")
+        
+        // 保存ボタン非活性化
+        saveButton.isEnabled = false
+        
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(imageTap))
+        mealImageView.addGestureRecognizer(tapGesture)
+        // ViewImageはボタンと違ってaddTargetメソッドがないためビューへジェスチャーを認識するように設定する必要がある。
+        mealImageView.isUserInteractionEnabled = true
+    }
+    
+    @objc func imageTap() {
+        print("image tap")
+        
+        let imagePickerController = UIImagePickerController()
+        // ギャラリーからイメージが選択できるようにする
+        imagePickerController.sourceType = .photoLibrary
+        self.present(imagePickerController, animated: true, completion: nil)
+        // ???? 明日確認（2020/02/25)
+        //　https://studyhard24.tistory.com/46
+        // https://baked-corn.tistory.com/45
+        imagePickerController.delegate = self
+        
+        
+    }
+    // Meal_Detail_Model 20:30
+    // ???? 明日確認（2020/02/25)
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImage = info[.originalImage] as? UIImage else{
+            return
+        }
+        
+        // imageViewへ設定
+        mealImageView.image = selectedImage
+        // imageModelへ設定
+        mealModel.photo = selectedImage
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    // ボタン制御
+    @IBAction func didChanged(_ sender: UITextField) {
+        // テキストフィルドの入力有無確認
+            if sender.text?.isEmpty ?? true{
+                saveButton.isEnabled = false
+            }else{
+                saveButton.isEnabled = true
+            }
+    }
+    
+    // 保存
+    @IBAction func saveMeal(_ sender: Any) {
+        print("save meal")
     }
     
     @IBAction func closeVC(_ sender: Any) {
@@ -54,3 +109,4 @@ class MealDetailViewController: UIViewController {
     */
 
 }
+
