@@ -36,13 +36,18 @@ class RatingView: UIStackView {
         let emptyStar = UIImage(named: "emptyStar")
         let highlightedStar = UIImage(named: "highlightedStar")
         
-        for _ in 0..<5 {
+        for index in 0..<5 {
             
             let button = UIButton()
             
             // buttonサイズ設定
             button.widthAnchor.constraint(equalToConstant: 40).isActive = true
             button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            
+            // ボタンのタグ設定
+            button.tag = index + 1
+            // ボタンを押した際の処理
+            button.addTarget(self, action: #selector(selectedStar), for: .touchUpInside)
             
             button.setImage(filledStar, for: .selected)
             button.setImage(emptyStar, for: .normal)
@@ -56,6 +61,14 @@ class RatingView: UIStackView {
     
     }
     
+    // ボタンの処理
+    @objc func selectedStar(sender: UIButton) {
+        print("selected star \(sender.tag)")
+        // rating値が設定されるたびにレビューが更新される。
+        rating = sender.tag
+    }
+    
+    // レビュ更新
     func updateButtonSelectionState() {
         for (index, button) in ratingButtons.enumerated(){
             button.isSelected = index < self.rating

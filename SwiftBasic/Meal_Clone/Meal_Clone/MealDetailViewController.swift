@@ -40,15 +40,14 @@ class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate
         // ギャラリーからイメージが選択できるようにする
         imagePickerController.sourceType = .photoLibrary
         self.present(imagePickerController, animated: true, completion: nil)
-        // ???? 明日確認（2020/02/25)
+        // ???? 明日確認（2020/02/26)
         //　https://studyhard24.tistory.com/46
         // https://baked-corn.tistory.com/45
         imagePickerController.delegate = self
         
         
     }
-    // Meal_Detail_Model 20:30
-    // ???? 明日確認（2020/02/25)
+    // ???? 明日確認（2020/02/26)
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         guard let selectedImage = info[.originalImage] as? UIImage else{
@@ -72,11 +71,17 @@ class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate
             }else{
                 saveButton.isEnabled = true
             }
+        // 入力したテキストフィルドの値をモデルに設定
+        mealModel.name = sender.text ?? ""
     }
     
     // 保存
     @IBAction func saveMeal(_ sender: Any) {
         print("save meal")
+        // rating値をモデルに設定
+        mealModel.rating = ratingView.rating
+        // model save
+        
     }
     
     @IBAction func closeVC(_ sender: Any) {
