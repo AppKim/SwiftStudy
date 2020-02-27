@@ -80,7 +80,9 @@ class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate
         print("save meal")
         // rating値をモデルに設定
         mealModel.rating = ratingView.rating
+        
         // model save
+        self.performSegue(withIdentifier: "toMealList", sender: self)
         
     }
     

@@ -14,6 +14,31 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mealTableView: UITableView!
     
+    // saveボタン処理
+    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+        
+        guard let detailVC = sender.source as? MealDetailViewController else {
+            return
+        }
+        
+        // 更新
+        if let selectedIndexPath = self.mealTableView.indexPathForSelectedRow {
+            mealList[selectedIndexPath.row] = detailVC.mealModel
+            // 該当行のみ更新
+            self.mealTableView.reloadRows(at: [selectedIndexPath], with: .none)
+            // reloadを行うことで不要となる
+            //self.mealTableView.deselectRow(at: selectedIndexPath, animated: true)
+        // 新規
+        }else{
+            let insertIndexPath = IndexPath(row: mealList.count, section: 0)
+            mealList.append(detailVC.mealModel)
+            // 該当行のみ追加
+            self.mealTableView.insertRows(at: [insertIndexPath], with: .automatic)
+            
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,7 +91,9 @@ extension ViewController: UITableViewDataSource{
         
         mealCell.name.text = mealList[indexPath.row].name
         mealCell.ratingView.rating = mealList[indexPath.row].rating
-        mealCell.mealImageView.image = mealList[indexPath.row].photo
+        // 該当viewはジェスチャー認識しないように非活性化
+        mealCell.ratingView.isUserInteractionEnabled = false
+        mealCell.mealImageView.image = mealList[indexPath.row].photo ?? UIImage(named: "defaultPhoto")
         
         
         return mealCell
