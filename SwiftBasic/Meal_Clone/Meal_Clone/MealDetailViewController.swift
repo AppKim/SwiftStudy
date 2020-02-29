@@ -8,8 +8,16 @@
 
 import UIKit
 
-class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+extension MealDetailViewController: RatingViewDelegate {
+    
+    func ratingStatusChanged() {
+        saveButtonStatus()
+    }
+}
+
+class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mealImageView: UIImageView!
     @IBOutlet weak var ratingView: RatingView!
@@ -19,6 +27,9 @@ class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ratingView.delegate = self
+        
         // ViewControllerのセルからの値を受け取って設定する
         nameField.text = mealModel.name
         ratingView.rating = mealModel.rating
@@ -57,22 +68,28 @@ class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate
         // imageViewへ設定
         mealImageView.image = selectedImage
         // imageModelへ設定
-        mealModel.photo = selectedImage
-        
+        saveButtonStatus()
         self.dismiss(animated: true, completion: nil)
         
     }
     
     // ボタン制御
     @IBAction func didChanged(_ sender: UITextField) {
+        
+        // バーリーデーション処理
+        saveButtonStatus()
+
+    }
+    
+    // バーリーデーション
+    func saveButtonStatus() {
         // テキストフィルドの入力有無確認
-            if sender.text?.isEmpty ?? true{
+            if nameField.text?.isEmpty ?? true{
                 saveButton.isEnabled = false
             }else{
                 saveButton.isEnabled = true
             }
-        // 入力したテキストフィルドの値をモデルに設定
-        mealModel.name = sender.text ?? ""
+        
     }
     
     // 保存
@@ -80,6 +97,9 @@ class MealDetailViewController: UIViewController,UIImagePickerControllerDelegate
         print("save meal")
         // rating値をモデルに設定
         mealModel.rating = ratingView.rating
+        // 入力したテキストフィルドの値をモデルに設定
+        mealModel.name = nameField.text ?? ""
+        mealModel.photo = mealImageView.image
         
         // model save
         self.performSegue(withIdentifier: "toMealList", sender: self)

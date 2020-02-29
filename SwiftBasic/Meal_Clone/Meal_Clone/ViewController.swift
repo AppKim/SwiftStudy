@@ -36,18 +36,99 @@ class ViewController: UIViewController {
             self.mealTableView.insertRows(at: [insertIndexPath], with: .automatic)
             
         }
+        // 保存
+        saveMeals()
+    }
+    
+    // データ保存(archive)
+    func saveMeals() {
         
+        // データを直接保存する際はビューの更新に遅延が発生するため、バックグラウンドthreadとして実行
+        DispatchQueue.global().async {
+        // path
+        let documentDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first
+        // myFolder/meals
+        guard let archiveURL = documentDirectory?.appendingPathComponent("meals") else{
+            return
+        }
+        // archive
+        // ios11まで
+        //let isSuccessSave = NSKeyedArchiver.archiveRootObject(mealList, toFile: archiveURL.path)
+        
+        do{
+            // ios12から
+            let archiveData = try NSKeyedArchiver.archivedData(withRootObject: self.mealList, requiringSecureCoding: true)
+            try archiveData.write(to: archiveURL)
+            
+        }catch{
+            print(error)
+        }
+        /* ios11
+        if isSuccessSave {
+            print("success saved")
+        }else{
+            print("failed save")
+        }
+        */
+        }
+        
+    }
+    
+    
+    // 削除
+    var isEditMode = false
+    @IBAction func doEdit(_ sender: Any) {
+        isEditMode = !isEditMode
+        print("\(isEditMode)")
+        mealTableView.setEditing(isEditMode, animated: true)
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // modelにて削除
+            mealList.remove(at: indexPath.row)
+            // tableviewにて削除
+            mealTableView.deleteRows(at: [indexPath], with: .automatic)
+            // archive
+            saveMeals()
+        }
+    }
+    
+    // データロード(unarchive)
+    func loadMeals() -> [MealModel]? {
+        // path
+        let documentDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first
+        // myFolder/meals
+        guard let archiveURL = documentDirectory?.appendingPathComponent("meals") else{
+            return nil
+        }
+        guard let codedData = try? Data(contentsOf: archiveURL) else{
+            return nil
+        }
+        guard let unarchivedData = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(codedData) else {
+            return nil
+        }
+        
+        return unarchivedData as? [MealModel]
+        
+        //return NSKeyedUnarchiver.unarchiveObject(withFile: archiveURL.path) as? [MealModel]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dummy1 = MealModel.init(name: "パスタ", photo: UIImage(named: "meal1"), rating: 3)
-        let dummy2 = MealModel.init(name: "ケバブ", photo: UIImage(named: "meal2"), rating: 2)
-        let dummy3 = MealModel.init(name: "ステーキ", photo: UIImage(named: "meal3"), rating: 5)
-        mealList.append(dummy1)
-        mealList.append(dummy2)
-        mealList.append(dummy3)
+        if let loadedMeals = loadMeals() {
+            self.mealList = loadedMeals
+        }
+        
+        if mealList.count == 0 {
+            let dummy1 = MealModel.init(name: "パスタ", photo: UIImage(named: "meal1"), rating: 3)
+            let dummy2 = MealModel.init(name: "ケバブ", photo: UIImage(named: "meal2"), rating: 2)
+            let dummy3 = MealModel.init(name: "ステーキ", photo: UIImage(named: "meal3"), rating: 5)
+            mealList.append(dummy1)
+            mealList.append(dummy2)
+            mealList.append(dummy3)
+        }
+        
         
     }
     // segueを利用し、他のViewControllerへデータを転送する
@@ -68,7 +149,6 @@ class ViewController: UIViewController {
             
         }
     }
-
 
 }
 
@@ -94,7 +174,6 @@ extension ViewController: UITableViewDataSource{
         // 該当viewはジェスチャー認識しないように非活性化
         mealCell.ratingView.isUserInteractionEnabled = false
         mealCell.mealImageView.image = mealList[indexPath.row].photo ?? UIImage(named: "defaultPhoto")
-        
         
         return mealCell
     }

@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol RatingViewDelegate {
+    func ratingStatusChanged()
+}
+
 class RatingView: UIStackView {
+    
+    var delegate: RatingViewDelegate?
     
     private var ratingButtons: [UIButton] = []
     public var rating = 0 {
         didSet{
+            delegate?.ratingStatusChanged()
             updateButtonSelectionState()
         }
     }// 0 - 5

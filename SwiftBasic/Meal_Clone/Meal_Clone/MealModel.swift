@@ -8,13 +8,34 @@
 
 import UIKit
 
-struct MealModel{
+class MealModel: NSObject,NSCoding,NSSecureCoding{
+    // NSSecureCodingはNSKeyedArchiverのios12バージョンの場合実装
+    // requiringSecureCoding: trueにする場合のみ
+    static var supportsSecureCoding: Bool {
+        return true
+    }
+    
+    // archiveする際の必須実装　NSObject,NScoding
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(photo, forKey: "photo")
+        coder.encode(rating, forKey: "rating")
+    }
+    // archiveする際の必須実装 NSObject,NScoding
+    required convenience init?(coder: NSCoder) {
+        let name = coder.decodeObject(forKey: "name") as! String
+        let photo = coder.decodeObject(forKey: "photo") as? UIImage
+        let rating = coder.decodeInteger(forKey: "rating")
+        
+        self.init(name: name,photo: photo,rating: rating)
+        
+    }
     
     var name: String
     var photo: UIImage?
     var rating: Int
     
-    init() {
+    override init() {
         self.name = ""
         self.rating = 0
     }
@@ -25,6 +46,4 @@ struct MealModel{
         self.rating = rating
     }
     
-    
-
 }
