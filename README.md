@@ -66,3 +66,7 @@ Option누르면 간격 보여줌
 시작 포인트 * 배율 + constant
 
 상대적인 개념이기때문에 관계에 대한 크기만 설정가능
+
+Bottom, Trailing은끝포인트 / 배율
+
+Top, Leading은시작포인트 * 배율 
