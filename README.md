@@ -1,6 +1,3 @@
-# SwiftStudy
-
-
 # Constraints
 
 각 디바이스 별로 위치와 크기를 조정하기 위해 사용
