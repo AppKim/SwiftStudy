@@ -49,14 +49,20 @@ Edit 상세 뷰에서 Equal Width에서 값 변경은 관계의 폭 값의 변�
 
 # Align
 
-두개의 오브젝트 이상 정렬 가능. 아 배고프다
+두개의 오브젝트 이상 정렬 가능
+
 Leading Edges
+
 Trailing Edges
+
 Top Edges
+
 Bottom Edges
 
 # Multiplier
 
 Option누르면 간격 보여줌
+
 시작 포인트 * 배율 + constant
+
 상대적인 개념이기때문에 관계에 대한 크기만 설정가능
