@@ -37,6 +37,7 @@ Equal Heights
 # Align
 
 두개의 오브젝트 이상 정렬 가능
+
 Leading Edges
 Trailing Edges
 Top Edges
