@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="csX-ed-VdK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -22,12 +22,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="73D-0G-Mxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TA0-iE-QKD"/>
-                            <constraint firstItem="73D-0G-Mxc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" multiplier="2" constant="100" id="X86-Ig-kh9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="73D-0G-Mxc" secondAttribute="bottom" id="iME-pu-Fj3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="73D-0G-Mxc" secondAttribute="trailing" multiplier="2" id="ykv-Vu-uJV"/>
+                            <constraint firstItem="73D-0G-Mxc" firstAttribute="leading" secondItem="5ai-D2-nc1" secondAttribute="leading" id="TA0-iE-QKD"/>
+                            <constraint firstItem="73D-0G-Mxc" firstAttribute="top" secondItem="5ai-D2-nc1" secondAttribute="top" multiplier="2" constant="100" id="X86-Ig-kh9"/>
+                            <constraint firstItem="5ai-D2-nc1" firstAttribute="bottom" secondItem="73D-0G-Mxc" secondAttribute="bottom" id="iME-pu-Fj3"/>
+                            <constraint firstItem="5ai-D2-nc1" firstAttribute="trailing" secondItem="73D-0G-Mxc" secondAttribute="trailing" multiplier="2" id="ykv-Vu-uJV"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="5ai-D2-nc1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,20 +78,57 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="2SI-xt-7od" firstAttribute="centerY" secondItem="IWV-NF-R5h" secondAttribute="centerY" multiplier="0.5" constant="40" id="3hI-ts-pcz"/>
-                            <constraint firstItem="2SI-xt-7od" firstAttribute="centerX" secondItem="IWV-NF-R5h" secondAttribute="centerX" multiplier="1.5" id="7dG-re-rTB"/>
-                            <constraint firstItem="06q-Vd-YRm" firstAttribute="centerX" secondItem="IWV-NF-R5h" secondAttribute="centerX" multiplier="1.5" id="BOf-6E-cr2"/>
-                            <constraint firstItem="XhW-Lg-sEC" firstAttribute="centerX" secondItem="IWV-NF-R5h" secondAttribute="centerX" multiplier="0.5" id="G8V-v6-0mg"/>
+                            <constraint firstItem="2SI-xt-7od" firstAttribute="centerX" secondItem="e1H-Jq-G4w" secondAttribute="centerX" multiplier="1.5" id="7dG-re-rTB"/>
+                            <constraint firstItem="06q-Vd-YRm" firstAttribute="centerX" secondItem="e1H-Jq-G4w" secondAttribute="centerX" multiplier="1.5" id="BOf-6E-cr2"/>
+                            <constraint firstItem="XhW-Lg-sEC" firstAttribute="centerX" secondItem="e1H-Jq-G4w" secondAttribute="centerX" multiplier="0.5" id="G8V-v6-0mg"/>
                             <constraint firstItem="06q-Vd-YRm" firstAttribute="centerY" secondItem="IWV-NF-R5h" secondAttribute="centerY" multiplier="1.5" constant="-40" id="XN9-8x-d1l"/>
                             <constraint firstItem="1aC-kc-f5J" firstAttribute="centerY" secondItem="IWV-NF-R5h" secondAttribute="centerY" multiplier="1.5" constant="-40" id="ZAn-m7-bGi"/>
                             <constraint firstItem="XhW-Lg-sEC" firstAttribute="centerY" secondItem="IWV-NF-R5h" secondAttribute="centerY" multiplier="0.5" constant="40" id="j6d-py-3df"/>
-                            <constraint firstItem="1aC-kc-f5J" firstAttribute="centerX" secondItem="IWV-NF-R5h" secondAttribute="centerX" multiplier="0.5" id="ruh-r6-ZbT"/>
+                            <constraint firstItem="1aC-kc-f5J" firstAttribute="centerX" secondItem="e1H-Jq-G4w" secondAttribute="centerX" multiplier="0.5" id="ruh-r6-ZbT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ax0-mD-wKW"/>
+                        <viewLayoutGuide key="safeArea" id="e1H-Jq-G4w"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0na-Nf-lWZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="801" y="117"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6n9-w6-8Yy">
+            <objects>
+                <viewController id="csX-ed-VdK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oES-6X-a48">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeatherBG_Sun.png" translatesAutoresizingMaskIntoConstraints="NO" id="gUq-64-XM1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="40°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaR-q7-RzL">
+                                <rect key="frame" x="174" y="312" width="66" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gUq-64-XM1" secondAttribute="bottom" id="0A0-jf-zzB"/>
+                            <constraint firstItem="gUq-64-XM1" firstAttribute="top" secondItem="oES-6X-a48" secondAttribute="top" id="3Aa-FW-Out"/>
+                            <constraint firstItem="QaR-q7-RzL" firstAttribute="centerY" secondItem="oES-6X-a48" secondAttribute="centerY" multiplier="0.75" id="8gf-73-fxO"/>
+                            <constraint firstItem="QaR-q7-RzL" firstAttribute="centerX" secondItem="oES-6X-a48" secondAttribute="centerX" id="ELg-5G-NvS"/>
+                            <constraint firstItem="gUq-64-XM1" firstAttribute="leading" secondItem="oES-6X-a48" secondAttribute="leading" id="Yxa-1I-oMM"/>
+                            <constraint firstAttribute="trailing" secondItem="gUq-64-XM1" secondAttribute="trailing" id="tvd-Nc-1DL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8GM-JW-RaP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7j-kN-0Fy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="118"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="WeatherBG_Sun.png" width="180" height="320.16000366210938"/>
+    </resources>
 </document>
