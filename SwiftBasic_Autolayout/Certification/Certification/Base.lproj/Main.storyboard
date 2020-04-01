@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Certification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyR-B4-tYM">
+                                <rect key="frame" x="20" y="181.33333333333331" width="374" height="533.33333333333348"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cert_BG.PNG" translatesAutoresizingMaskIntoConstraints="NO" id="9bF-fL-xeZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="533.33333333333337"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Bwk-is-301">
+                                        <rect key="frame" x="121.66666666666667" y="0.0" width="130.66666666666663" height="186.66666666666666"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kim Junseok" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Vtn-Hc-91H">
+                                        <rect key="frame" x="117.66666666666667" y="0.0" width="138.66666666666663" height="373.33333333333331"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Issuer : Japan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="dEQ-Mk-TnR">
+                                        <rect key="frame" x="95.333333333333343" y="0.0" width="108.33333333333334" height="480"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type : IT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ogq-Rf-RNd">
+                                        <rect key="frame" x="95.333333333333343" y="0.0" width="67.333333333333343" height="533.33333333333337"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Date : 2020. 3. 24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="a0B-i6-TZE">
+                                        <rect key="frame" x="95.333333333333329" y="0.0" width="213.33333333333337" height="586.33333333333337"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="ogq-Rf-RNd" firstAttribute="width" secondItem="9bF-fL-xeZ" secondAttribute="width" multiplier="0.18" id="1dn-Qg-SsR"/>
+                                    <constraint firstItem="Vtn-Hc-91H" firstAttribute="width" secondItem="9bF-fL-xeZ" secondAttribute="width" multiplier="0.37" id="3hO-Qm-Yj0"/>
+                                    <constraint firstAttribute="width" secondItem="WyR-B4-tYM" secondAttribute="height" multiplier="1009:1438" id="6U8-M6-UUc"/>
+                                    <constraint firstItem="a0B-i6-TZE" firstAttribute="bottom" secondItem="9bF-fL-xeZ" secondAttribute="bottom" multiplier="1.1" id="6sz-xc-lIe"/>
+                                    <constraint firstItem="ogq-Rf-RNd" firstAttribute="leading" secondItem="dEQ-Mk-TnR" secondAttribute="leading" id="DGr-FJ-lvb"/>
+                                    <constraint firstItem="ogq-Rf-RNd" firstAttribute="bottom" secondItem="9bF-fL-xeZ" secondAttribute="bottom" id="Ex0-8R-8dM"/>
+                                    <constraint firstItem="dEQ-Mk-TnR" firstAttribute="centerX" secondItem="9bF-fL-xeZ" secondAttribute="centerX" multiplier="0.8" id="LtQ-Kc-C8v"/>
+                                    <constraint firstItem="a0B-i6-TZE" firstAttribute="width" secondItem="9bF-fL-xeZ" secondAttribute="width" multiplier="0.57" id="Mop-UG-VJo"/>
+                                    <constraint firstItem="Bwk-is-301" firstAttribute="bottom" secondItem="9bF-fL-xeZ" secondAttribute="bottom" multiplier="0.35" id="NNW-gb-yzH"/>
+                                    <constraint firstItem="Bwk-is-301" firstAttribute="centerX" secondItem="9bF-fL-xeZ" secondAttribute="centerX" id="OJw-a0-SSN"/>
+                                    <constraint firstItem="a0B-i6-TZE" firstAttribute="top" secondItem="9bF-fL-xeZ" secondAttribute="top" id="QaW-1f-U0Q"/>
+                                    <constraint firstItem="ogq-Rf-RNd" firstAttribute="top" secondItem="9bF-fL-xeZ" secondAttribute="top" id="Rxg-ul-wb1"/>
+                                    <constraint firstItem="Vtn-Hc-91H" firstAttribute="bottom" secondItem="9bF-fL-xeZ" secondAttribute="bottom" multiplier="0.7" id="USW-z5-Y24"/>
+                                    <constraint firstItem="9bF-fL-xeZ" firstAttribute="top" secondItem="WyR-B4-tYM" secondAttribute="top" id="WPb-M2-JMc"/>
+                                    <constraint firstItem="dEQ-Mk-TnR" firstAttribute="top" secondItem="9bF-fL-xeZ" secondAttribute="top" id="Xps-Cu-H7M"/>
+                                    <constraint firstAttribute="trailing" secondItem="9bF-fL-xeZ" secondAttribute="trailing" id="h8e-1f-6Ee"/>
+                                    <constraint firstItem="ogq-Rf-RNd" firstAttribute="leading" secondItem="a0B-i6-TZE" secondAttribute="leading" id="iW7-su-weY"/>
+                                    <constraint firstItem="dEQ-Mk-TnR" firstAttribute="width" secondItem="9bF-fL-xeZ" secondAttribute="width" multiplier="0.29" id="lqV-1f-dD3"/>
+                                    <constraint firstItem="Vtn-Hc-91H" firstAttribute="centerX" secondItem="9bF-fL-xeZ" secondAttribute="centerX" id="mQy-ac-fa8"/>
+                                    <constraint firstAttribute="bottom" secondItem="9bF-fL-xeZ" secondAttribute="bottom" id="mum-VE-CWQ"/>
+                                    <constraint firstItem="Vtn-Hc-91H" firstAttribute="top" secondItem="9bF-fL-xeZ" secondAttribute="top" id="nQY-uy-gqm"/>
+                                    <constraint firstItem="dEQ-Mk-TnR" firstAttribute="bottom" secondItem="9bF-fL-xeZ" secondAttribute="bottom" multiplier="0.9" id="oST-Ke-B6Q"/>
+                                    <constraint firstItem="Bwk-is-301" firstAttribute="width" secondItem="9bF-fL-xeZ" secondAttribute="width" multiplier="0.35" id="sdo-x0-GN7"/>
+                                    <constraint firstItem="Bwk-is-301" firstAttribute="top" secondItem="9bF-fL-xeZ" secondAttribute="top" id="xaX-Qc-mnw"/>
+                                    <constraint firstItem="9bF-fL-xeZ" firstAttribute="leading" secondItem="WyR-B4-tYM" secondAttribute="leading" id="xy2-aW-zvV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WyR-B4-tYM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RX5-sA-eFn"/>
+                            <constraint firstItem="WyR-B4-tYM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Rkw-AF-hP8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WyR-B4-tYM" secondAttribute="trailing" constant="20" id="tol-dk-Lsx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Cert_BG.PNG" width="1009" height="1438"/>
+    </resources>
+</document>
