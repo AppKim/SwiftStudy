@@ -58,7 +58,7 @@
                                                 <constraint firstItem="wBn-Rl-UKa" firstAttribute="top" secondItem="lGP-Ji-ZTF" secondAttribute="top" constant="15" id="zGf-qt-0pu"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="V5c-dn-xQE" id="TTW-Ah-Viq"/>
                                         </connections>
