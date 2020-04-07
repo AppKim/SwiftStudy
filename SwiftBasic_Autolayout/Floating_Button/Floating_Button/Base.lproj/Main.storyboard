@@ -25,6 +25,9 @@
                                     <constraint firstAttribute="height" constant="60" id="Ki4-ol-7ZZ"/>
                                 </constraints>
                                 <state key="normal" image="add_icon_green.png"/>
+                                <connections>
+                                    <segue destination="wcb-9e-85H" kind="show" identifier="showPopup" animates="NO" id="dEw-F2-18n"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -43,14 +46,22 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Floating Button List View Controller-->
         <scene sceneID="Un8-8x-39X">
             <objects>
-                <viewController id="wcb-9e-85H" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="wcb-9e-85H" customClass="FloatingButtonListViewController" customModule="Floating_Button" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lsm-UC-Ild">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrP-8T-QOY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W5m-Et-NFL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-Tf-Kve">
                                 <rect key="frame" x="314" y="762" width="60" height="60"/>
                                 <constraints>
@@ -84,23 +95,27 @@
                                 <state key="normal" image="food3.png"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="HhH-Tf-Kve" firstAttribute="centerX" secondItem="qf0-gl-25Q" secondAttribute="centerX" id="Jbd-zC-Tri"/>
                             <constraint firstItem="xTy-PI-cLU" firstAttribute="trailing" secondItem="HhH-Tf-Kve" secondAttribute="trailing" constant="40" id="JhV-c7-HhE"/>
+                            <constraint firstAttribute="bottom" secondItem="HrP-8T-QOY" secondAttribute="bottom" id="Lm7-QY-CIu"/>
                             <constraint firstItem="HhH-Tf-Kve" firstAttribute="centerX" secondItem="HmR-bl-8rW" secondAttribute="centerX" id="QgS-aj-Owl"/>
                             <constraint firstItem="HhH-Tf-Kve" firstAttribute="centerY" secondItem="HmR-bl-8rW" secondAttribute="centerY" constant="240" id="SdW-XU-P5w"/>
                             <constraint firstItem="HhH-Tf-Kve" firstAttribute="centerX" secondItem="RuG-zJ-R8Z" secondAttribute="centerX" id="ZFM-Eg-jAL"/>
+                            <constraint firstItem="HrP-8T-QOY" firstAttribute="top" secondItem="Lsm-UC-Ild" secondAttribute="top" id="Zzz-77-xNT"/>
                             <constraint firstItem="xTy-PI-cLU" firstAttribute="bottom" secondItem="HhH-Tf-Kve" secondAttribute="bottom" constant="40" id="aax-s4-PAR"/>
+                            <constraint firstItem="HrP-8T-QOY" firstAttribute="leading" secondItem="Lsm-UC-Ild" secondAttribute="leading" id="bFE-Xh-uyg"/>
                             <constraint firstItem="HhH-Tf-Kve" firstAttribute="centerY" secondItem="RuG-zJ-R8Z" secondAttribute="centerY" constant="160" id="fOH-wG-8Gc"/>
+                            <constraint firstAttribute="trailing" secondItem="HrP-8T-QOY" secondAttribute="trailing" id="mKK-2F-Znp"/>
                             <constraint firstItem="HhH-Tf-Kve" firstAttribute="centerY" secondItem="qf0-gl-25Q" secondAttribute="centerY" constant="80" id="wUa-y8-aab"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xTy-PI-cLU"/>
                     </view>
+                    <navigationItem key="navigationItem" id="N2n-Gf-8Y4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7X-KQ-G9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="800.00000000000011" y="115.84821428571428"/>
+            <point key="canvasLocation" x="895.6521739130435" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>
