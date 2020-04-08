@@ -62,14 +62,6 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-Tf-Kve">
-                                <rect key="frame" x="314" y="762" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="7q7-CZ-9mo"/>
-                                    <constraint firstAttribute="height" constant="60" id="LIe-g7-eQb"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="add_icon_green.png"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf0-gl-25Q">
                                 <rect key="frame" x="319" y="687" width="50" height="50"/>
                                 <constraints>
@@ -93,6 +85,20 @@
                                     <constraint firstAttribute="width" constant="50" id="u3k-pa-Df2"/>
                                 </constraints>
                                 <state key="normal" image="food3.png"/>
+                                <connections>
+                                    <action selector="food3Action:" destination="wcb-9e-85H" eventType="touchUpInside" id="xga-ao-AGS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhH-Tf-Kve">
+                                <rect key="frame" x="314" y="762" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="7q7-CZ-9mo"/>
+                                    <constraint firstAttribute="height" constant="60" id="LIe-g7-eQb"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="add_icon_green.png"/>
+                                <connections>
+                                    <action selector="dismissFloating:" destination="wcb-9e-85H" eventType="touchUpInside" id="fDw-e5-pqn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -112,6 +118,11 @@
                         <viewLayoutGuide key="safeArea" id="xTy-PI-cLU"/>
                     </view>
                     <navigationItem key="navigationItem" id="N2n-Gf-8Y4"/>
+                    <connections>
+                        <outlet property="btn1CenterY" destination="wUa-y8-aab" id="PmX-35-WD2"/>
+                        <outlet property="btn2CenterY" destination="fOH-wG-8Gc" id="1X2-mn-yNW"/>
+                        <outlet property="btn3CenterY" destination="SdW-XU-P5w" id="9wM-Nv-GaC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7X-KQ-G9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
