@@ -64,15 +64,41 @@
                                     <constraint firstItem="1Ey-ns-5YG" firstAttribute="height" secondItem="bFq-dS-t1F" secondAttribute="height" multiplier="0.6" id="vV8-7r-95m"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pae-uq-Mx5">
+                                <rect key="frame" x="20" y="468" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="style1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kZm-sI-Sza"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOg-Za-sth">
+                                <rect key="frame" x="86" y="468" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="style2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E2r-vy-Jhm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Pae-uq-Mx5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2yv-Na-YJg"/>
+                            <constraint firstItem="zOg-Za-sth" firstAttribute="leading" secondItem="Pae-uq-Mx5" secondAttribute="trailing" constant="20" id="3SZ-bF-q38"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bFq-dS-t1F" secondAttribute="trailing" constant="20" id="5Gp-Rj-7cu"/>
                             <constraint firstItem="bFq-dS-t1F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="CW9-2O-mrG"/>
+                            <constraint firstItem="zOg-Za-sth" firstAttribute="leading" secondItem="Pae-uq-Mx5" secondAttribute="trailing" constant="20" id="H9g-au-DU9"/>
+                            <constraint firstItem="Pae-uq-Mx5" firstAttribute="top" secondItem="bFq-dS-t1F" secondAttribute="bottom" constant="20" id="KDU-ii-c2V"/>
+                            <constraint firstItem="zOg-Za-sth" firstAttribute="top" secondItem="bFq-dS-t1F" secondAttribute="bottom" constant="20" id="MLz-34-ahi"/>
                             <constraint firstItem="bFq-dS-t1F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YY1-7L-UlB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="graph1Height" destination="u9f-WI-fdi" id="NQr-gC-shk"/>
+                        <outlet property="graph2Height" destination="vV8-7r-95m" id="Ohn-9k-eHy"/>
+                        <outlet property="graph3Height" destination="Xqh-9E-wCc" id="HVn-bq-DyW"/>
+                        <outlet property="graph4Height" destination="4K0-Wb-JBK" id="8Lr-Mz-xjQ"/>
+                        <outlet property="graph5Height" destination="m1a-PC-jas" id="09s-Ia-K6X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
