@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Switch_Custom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eD-S9-JNd">
+                                <rect key="frame" x="107" y="423" width="200" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92U-pR-L19">
+                                        <rect key="frame" x="150" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="eY2-2b-dyM"/>
+                                            <constraint firstAttribute="width" constant="50" id="hpu-z5-9Th"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="selectedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eER-Qm-UMh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0Pf-Oq-MAn"/>
+                                    <constraint firstItem="92U-pR-L19" firstAttribute="centerY" secondItem="3eD-S9-JNd" secondAttribute="centerY" id="N0d-De-7bD"/>
+                                    <constraint firstItem="92U-pR-L19" firstAttribute="centerX" secondItem="3eD-S9-JNd" secondAttribute="centerX" constant="75" id="OlE-em-Nyd"/>
+                                    <constraint firstAttribute="height" constant="50" id="el6-66-lyu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3eD-S9-JNd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PW7-i2-NPh"/>
+                            <constraint firstItem="3eD-S9-JNd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vcl-aO-Fv9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonCenterX" destination="OlE-em-Nyd" id="SHd-Gm-RZL"/>
+                        <outlet property="switchBG" destination="3eD-S9-JNd" id="B27-ik-eKp"/>
+                        <outlet property="switchBtn" destination="92U-pR-L19" id="KRQ-cp-nBq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="117"/>
+        </scene>
+    </scenes>
+</document>
