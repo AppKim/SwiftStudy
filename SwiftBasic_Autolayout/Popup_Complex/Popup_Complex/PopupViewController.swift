@@ -17,5 +17,16 @@ class PopupViewController: UIViewController {
         // Drawing code
     }
     */
-
+    
+    // 투명도 설정에는 Alpha와Opacity가있는데 Alpha는 뷰컨트롤러 전체를 투명하게 하고 Opacity는 해당하는 뷰만 투명하게 함
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    @IBAction func closePupup(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    
 }

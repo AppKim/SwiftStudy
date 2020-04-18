@@ -10,7 +10,7 @@
         <!--Popup View Controller-->
         <scene sceneID="f2F-xv-6vu">
             <objects>
-                <viewController storyboardIdentifier="popupVC_ID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="79b-jP-JBq" customClass="PopupViewController" customModule="Popup_Complex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popupVC" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="79b-jP-JBq" customClass="PopupViewController" customModule="Popup_Complex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PJr-aw-hom">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,6 +39,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0Y-rJ-dYf">
                                         <rect key="frame" x="174" y="305.5" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="closePupup:" destination="79b-jP-JBq" eventType="touchUpInside" id="XHH-I9-fdb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vea-1U-FmY">
                                         <rect key="frame" x="20" y="305.5" width="46" height="30"/>
@@ -82,7 +85,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ffp-yt-gUY" firstAttribute="centerX" secondItem="E0h-aQ-t67" secondAttribute="trailing" id="bFh-SL-aTC"/>
                             <constraint firstItem="E0h-aQ-t67" firstAttribute="centerX" secondItem="PJr-aw-hom" secondAttribute="centerX" id="frq-OB-1o8"/>
