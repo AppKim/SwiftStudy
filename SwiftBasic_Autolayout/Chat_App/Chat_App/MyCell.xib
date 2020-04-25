@@ -22,6 +22,7 @@
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="755" verticalHuggingPriority="755" scrollEnabled="NO" text="sdjasjdkasljdkalsjdklasjdklasjdlkasjdklasjdklasjdlkasjdlkasjkdljaslkdjaskldjaskldjaklsdjakls" translatesAutoresizingMaskIntoConstraints="NO" id="gmg-e2-Fxt">
                         <rect key="frame" x="106" y="15" width="260" height="154"/>
+                        <accessibility key="accessibilityConfiguration" identifier="myCell"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

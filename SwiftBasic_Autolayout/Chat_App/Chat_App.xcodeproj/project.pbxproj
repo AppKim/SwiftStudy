@@ -17,6 +17,8 @@
 		0F43366024531F5E0026F5A4 /* MyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F43365E24531F5E0026F5A4 /* MyCell.xib */; };
 		0F43366224531FA90026F5A4 /* myBubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F43366124531FA90026F5A4 /* myBubble@2x.png */; };
 		0F43366424531FBC0026F5A4 /* yourBubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F43366324531FBC0026F5A4 /* yourBubble@2x.png */; };
+		0FBF19CE2454258600846B18 /* YourCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBF19CC2454258600846B18 /* YourCell.swift */; };
+		0FBF19CF2454258600846B18 /* YourCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FBF19CD2454258600846B18 /* YourCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		0F43365E24531F5E0026F5A4 /* MyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCell.xib; sourceTree = "<group>"; };
 		0F43366124531FA90026F5A4 /* myBubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "myBubble@2x.png"; path = "../../../../../Downloads/Lecture Image Resource/myBubble@2x.png"; sourceTree = "<group>"; };
 		0F43366324531FBC0026F5A4 /* yourBubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yourBubble@2x.png"; path = "../../../../../Downloads/Lecture Image Resource/yourBubble@2x.png"; sourceTree = "<group>"; };
+		0FBF19CC2454258600846B18 /* YourCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCell.swift; sourceTree = "<group>"; };
+		0FBF19CD2454258600846B18 /* YourCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YourCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				0F43364F24531DAE0026F5A4 /* Main.storyboard */,
 				0F43365D24531F5E0026F5A4 /* MyCell.swift */,
 				0F43365E24531F5E0026F5A4 /* MyCell.xib */,
+				0FBF19CC2454258600846B18 /* YourCell.swift */,
+				0FBF19CD2454258600846B18 /* YourCell.xib */,
 				0F43365224531DB00026F5A4 /* Assets.xcassets */,
 				0F43365424531DB00026F5A4 /* LaunchScreen.storyboard */,
 				0F43365724531DB00026F5A4 /* Info.plist */,
@@ -142,6 +148,7 @@
 				0F43365324531DB00026F5A4 /* Assets.xcassets in Resources */,
 				0F43366424531FBC0026F5A4 /* yourBubble@2x.png in Resources */,
 				0F43366224531FA90026F5A4 /* myBubble@2x.png in Resources */,
+				0FBF19CF2454258600846B18 /* YourCell.xib in Resources */,
 				0F43365124531DAE0026F5A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBF19CE2454258600846B18 /* YourCell.swift in Sources */,
 				0F43364E24531DAE0026F5A4 /* ViewController.swift in Sources */,
 				0F43365F24531F5E0026F5A4 /* MyCell.swift in Sources */,
 				0F43364A24531DAE0026F5A4 /* AppDelegate.swift in Sources */,
