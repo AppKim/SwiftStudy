@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZUh-tQ-La2">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZUh-tQ-La2">
                                 <rect key="frame" x="0.0" y="44" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -68,7 +68,7 @@
                     <connections>
                         <outlet property="chatTableView" destination="ZUh-tQ-La2" id="wsF-dj-RSS"/>
                         <outlet property="inputTextView" destination="gBM-2y-7Ob" id="phy-Qg-qgP"/>
-                        <outlet property="inputViewBottomMargin" destination="HXf-ZQ-EeG" id="ogM-pR-B8M"/>
+                        <outlet property="inputViewButtonMargin" destination="l7Q-OG-pyn" id="aNm-78-CIE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

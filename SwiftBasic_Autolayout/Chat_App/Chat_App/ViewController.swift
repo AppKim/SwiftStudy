@@ -8,12 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+extension ChatVC{
+    
+     func initializeHideKeyboard(){
+        //Declare a Tap Gesture Recognizer which will trigger our dismissMyKeyboard() function
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+        //Add this tap gesture recognizer to the parent view
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
+        //In short- Dismiss the active keyboard.
+        view.endEditing(true)
+    }
+}
+
+
+class ViewController: UIViewController{
 
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var inputTextView: UITextView!
-    @IBOutlet weak var inputViewBottomMargin: NSLayoutConstraint!
-    
+    @IBOutlet weak var inputViewButtonMargin: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,14 +47,34 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         // 키보드가 내려올때
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        initializeHideKeyboard()
         
     }
     
     @objc func keyboardWillShow(noti: Notification) {
+        let notiInfo = noti.userInfo!
+        let keyboardFrame = notiInfo[UIResponder.keyboardFrameEndUserInfoKey]
+        as! CGRect
+        let height = keyboardFrame.size.height - self.view.safeAreaInsets.bottom
+        
+        let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        
+        UIView.animate(withDuration: animationDuration) {
+            self.inputViewButtonMargin.constant = height
+            self.view.layoutIfNeeded()
+        }
+        
         
     }
     
     @objc func keyboardWillHide(noti: Notification) {
+        // 테이블뷰내에서 어떤조작을 하였을때 키보드를 내려가게 하고싶을경우에는 inspectore에서 키보드에 대한 설정을 Do Not Dismiss에서 Dismiss On Drage로 설정
+        let notiInfo = noti.userInfo!
+        let animationDuration = notiInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        UIView.animate(withDuration: animationDuration) {
+            self.inputViewButtonMargin.constant = 0
+        }
+        
         
     }
     
@@ -44,6 +83,5 @@ class ViewController: UIViewController {
         
     }
     
-
 }
 
