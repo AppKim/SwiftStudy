@@ -8,31 +8,27 @@
 
 import UIKit
 
-extension ChatVC{
-    
-     func initializeHideKeyboard(){
-        //Declare a Tap Gesture Recognizer which will trigger our dismissMyKeyboard() function
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissMyKeyboard))
-        
-        //Add this tap gesture recognizer to the parent view
-        view.addGestureRecognizer(tap)
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate{
+
+    @IBOutlet weak var chatTableView: UITableView!{
+        didSet{
+            chatTableView.delegate = self
+            chatTableView.dataSource = self
+            chatTableView.separatorStyle = .none
+        }
     }
     
-    @objc func dismissMyKeyboard(){
-        //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
-        //In short- Dismiss the active keyboard.
-        view.endEditing(true)
+    var chatDatas = [String]()
+    
+    @IBOutlet weak var inputTextView: UITextView!{
+        didSet{
+            inputTextView.delegate = self
+        }
     }
-}
-
-
-class ViewController: UIViewController{
-
-    @IBOutlet weak var chatTableView: UITableView!
-    @IBOutlet weak var inputTextView: UITextView!
+    
+    @IBOutlet weak var inputTextViewHeight: NSLayoutConstraint!
     @IBOutlet weak var inputViewButtonMargin: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,6 +43,7 @@ class ViewController: UIViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         // 키보드가 내려올때
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        // 키보드 숨길때
         initializeHideKeyboard()
         
     }
@@ -78,10 +75,85 @@ class ViewController: UIViewController{
         
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatDatas.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row % 2 == 0 {
+            let myCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyCell
+            myCell.myTextView.text = chatDatas[indexPath.row]
+            // 셀선택스타일없애기
+            myCell.selectionStyle = .none
+            // 텍스트뷰 수정 불가능
+            myCell.myTextView.isEditable = false
+            return myCell
+            
+        }else{
+            let yourCell = tableView.dequeueReusableCell(withIdentifier: "yourCell", for: indexPath) as! YourCell
+            yourCell.yourTextView.text = chatDatas[indexPath.row]
+            // 셀선택스타일없애기
+            yourCell.selectionStyle = .none
+            // 텍스트뷰 수정 불가능
+            yourCell.yourTextView.isEditable = false
+            return yourCell
+        }
+    }
     
     @IBAction func sendString(_ sender: Any) {
         
+        // 데이터를 배열에 셋
+        chatDatas.append(inputTextView.text)
+        
+        inputTextView.text = ""
+        
+        // 마지막인덱스값
+        let lastIndexPath = IndexPath(row: chatDatas.count-1, section: 0)
+        
+        // 튀는 현상이 생기고 전체가 갱신되기 때문에 갱신할때 잘 사용하지 않는다
+        //chatTableView.reloadData()
+        
+        // 마지막 데이터만 갱신
+        chatTableView.insertRows(at: [lastIndexPath], with: .automatic)
+        
+        // 최신인덱스로 자동스크롤이동
+        chatTableView.scrollToRow(at: lastIndexPath, at: .bottom, animated: true)
+        
+        // textfield컨텐츠 사이즈 초기화
+        inputTextViewHeight.constant = 40
+        
     }
+    
+    // textfield컨텐츠 사이즈 조정
+    func textViewDidChange(_ textView: UITextView) {
+        
+        if textView.contentSize.height <= 40 {
+            inputTextViewHeight.constant = 40
+        }else if textView.contentSize.height >= 100 {
+            inputTextViewHeight.constant = 100
+        }else {
+            inputTextViewHeight.constant = textView.contentSize.height
+        }
+
+    }
+    
+     func initializeHideKeyboard(){
+        //Declare a Tap Gesture Recognizer which will trigger our dismissMyKeyboard() function
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+        //Add this tap gesture recognizer to the parent view
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
+        //In short- Dismiss the active keyboard.
+        view.endEditing(true)
+    }
+
     
 }
 

@@ -18,6 +18,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZUh-tQ-La2">
                                 <rect key="frame" x="0.0" y="44" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NnP-cs-wbJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YFu-nb-6Ma"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shu-GK-mwH">
                                 <rect key="frame" x="0.0" y="814" width="414" height="48"/>
@@ -68,6 +72,7 @@
                     <connections>
                         <outlet property="chatTableView" destination="ZUh-tQ-La2" id="wsF-dj-RSS"/>
                         <outlet property="inputTextView" destination="gBM-2y-7Ob" id="phy-Qg-qgP"/>
+                        <outlet property="inputTextViewHeight" destination="Hqa-eA-lF6" id="ewe-Q0-TGS"/>
                         <outlet property="inputViewButtonMargin" destination="l7Q-OG-pyn" id="aNm-78-CIE"/>
                     </connections>
                 </viewController>
